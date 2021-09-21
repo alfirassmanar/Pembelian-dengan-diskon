@@ -32,17 +32,16 @@ public class Diskon_Pembelian {
         String nama;
         
         
-        
-        System.out.println("Inputkan Nama Anda           : ");
+        System.out.print("Inputkan Nama Anda             : ");
         nama = sc.next();
-        
+      
         System.out.println("\n------------Selamat Datang di Program Saya AlFiras Manar_A082_009------------");
         
-        System.out.println("\nMasukan harga barang disini  :");
+        System.out.print("\nMasukkan Harga Barang              : ");
         harga = sc.nextInt();
-        System.out.println("Masukan jumlah barang        :");
+        System.out.print("Masukkan Jumlah Barang             : ");
         jumlah = sc.nextInt();
-                                
+        
         total= jumlah * harga;
                                         
         if(total <= 100001){//        Rass
@@ -62,16 +61,19 @@ public class Diskon_Pembelian {
             total = total - diskon;//        Rass
             System.out.println("Diskon Ada       : 10%");
             System.out.println("Total Belanjaan  : " + total);
+            
         } else if (total >= 300001 && total <= 400000) {
             diskon = total * 15/100;//        Rass
             total = total - diskon;//        Rass
             System.out.println("Diskon Ada       : 15%");
             System.out.println("Total Belanjaan  : " + total);
+            
         } else if (total >=400001 && total <= 500000) {
             diskon = total * 20/100;//        Rass
             total = total - diskon;//        Rass
             System.out.println("Diskon Ada       : 20%");
             System.out.println("Total Belanjaan  : " + total);
+            
         } else if (total >= 500001) {//        Rass
             diskon = total * 25/100;//        Rass
             total = total - diskon;//        Rass
@@ -79,9 +81,9 @@ public class Diskon_Pembelian {
             System.out.println("Total Belanjaan  : " + total);
         }//        Rass
         
-        System.out.println("----------Pembayaran----------");
+        System.out.println("\n----------Pembayaran----------");
         //        Rass
-        System.out.println("\nHalo Bapak/Ibu                         :" + nama);
+        System.out.println("\nHalo Bapak/Ibu                          :" + nama);
         System.out.println("Tagihan Anda                            : " + total);
         //        Rass
         System.out.print("\nMasukan Nominal Uang                  Rp: ");
@@ -90,10 +92,12 @@ public class Diskon_Pembelian {
             double kembalian = pembayaran - total;
             //        Rass
              if(pembayaran >= total){
-                System.out.println("Kembalian Anda                 Rp: " + kembalian);
-                System.out.println("\nTransaksi Sukses Happy Shoping :)");
+                System.out.println("Kembalian Anda                        Rp: " + kembalian);
                 //        Rass
-            } else if(pembayaran < total) {
+            } if(kembalian == 0){
+                System.out.println("Uang Anda Pass!!");
+                System.out.println("\nTransaksi Sukses Happy Shoping :)");
+            } else if(pembayaran <= total) {
                 System.out.println("----------------------");
                 System.out.println("Uang Anda Kurengg Bos!!!");
                 System.out.println("----------------------");
@@ -103,6 +107,7 @@ public class Diskon_Pembelian {
                 System.out.println("Kembalian Anda                  Rp: " + kembalian);
                 System.out.println("\nTransaksi Sukses Happy Shoping :)");
             }
+             
     }
     
 }
